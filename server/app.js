@@ -23,7 +23,7 @@ app.use(cors({
 app.use(cookieParser());
 
 
-const uri = 'mongodb+srv://hiamsolo:passwordshouldbestrong@cluster0.ar0v8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = 'mongodb://localhost:27017/cloud';
 mongoose.connect(uri)
     .then(() => {
         console.log('Successfully connected to MongoDB');
