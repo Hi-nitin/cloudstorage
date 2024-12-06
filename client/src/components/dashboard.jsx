@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import tokenchecker from '../api/checktoken';
 import { useNavigate } from 'react-router-dom';
 
+import { postapi2 } from '../api/getpost'
 
 import myurl from '../serverurl/url'
 const serverurl=myurl;
@@ -42,10 +43,25 @@ const FileUpload = () => {
     };
     checkMyToken();
   }, []);
-
+ 
 
   const handleSubmit = async (event) => {
-   
+    event.preventDefault();
+    setupload(true)
+    if (file == null) {
+
+    } else {
+      const formData = new FormData();
+
+      for (var i = 0; i < file.length; i++) {
+        formData.append('kerafiles', file[i]);
+      }
+
+      const response = await postapi2(serverurl+'/fileupload', formData);
+      console.log(response);
+
+      if (response.succcess) { setupload(false); toast("file uploaded"); }
+    }
   };
   if (!loading) {
     return null;
@@ -71,7 +87,7 @@ const FileUpload = () => {
                   />
                 </Form.Group>
 
-               
+           
 
                 <Button type="submit" variant="primary" className="w-100">
                   Upload
