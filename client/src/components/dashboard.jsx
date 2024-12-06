@@ -43,7 +43,9 @@ const FileUpload = () => {
     };
     checkMyToken();
   }, []);
- 
+  const handleRemoveFile = () => {
+    setFile(null);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -87,7 +89,33 @@ const FileUpload = () => {
                   />
                 </Form.Group>
 
-           
+                {/* {file && (
+                <div className="file-preview mb-4">
+                  <Card>
+                    <Card.Body>
+                      <Row>
+                        <Col xs={8}>
+                          <Card.Title>{file.name}</Card.Title>
+                          <Card.Text>{file.size} KB</Card.Text>
+                        </Col>
+                        <Col xs={4} className="text-end">
+                          <Button variant="danger" onClick={handleRemoveFile}>Remove</Button>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  </Card>
+                </div>
+              )} */}
+
+                {/* {
+                file.map((val)=>{
+                  return(
+                    <>
+                    {val}
+                    </>
+                  )
+                })
+              }  */}
 
                 <Button type="submit" variant="primary" className="w-100">
                   Upload
