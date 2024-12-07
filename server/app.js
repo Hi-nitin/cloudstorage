@@ -11,6 +11,7 @@ const server = createServer(app);
 const mongoose = require('mongoose');
 
 
+app.use('/humpydumpy', express.static(path.join(__dirname, 'public', 'humpydumpy')));
 
 
 app.use(cors({
