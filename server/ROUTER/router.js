@@ -9,13 +9,17 @@ const login_M=require('../MIDDLEWARE/login')
 const fileupload=require('../BUSINESS/fileupload')
 const fileupload_M=require('../MIDDLEWARE/fileupload')
 const myfiles=require('../BUSINESS/myfile')
+const deletefile=require('../BUSINESS/deletefile')
+
+const tokenchecker=require('../BUSINESS/tokenchecker')
 
 
 router.post('/signup',signup_V,signup_M,signup_B)
 router.post('/login',login_V,login_M,login_B)
 router.post('/fileupload', fileupload_M.array('kerafiles', 10),fileupload)
 router.get('/myfiles',myfiles)
-
+router.post('/deletefile',deletefile)
+router.get('/tokenchecker',tokenchecker)
 
 router.get('/', (req, res) => {
   res.send('Hello');
