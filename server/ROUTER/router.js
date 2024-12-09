@@ -10,7 +10,7 @@ const fileupload=require('../BUSINESS/fileupload')
 const fileupload_M=require('../MIDDLEWARE/fileupload')
 const myfiles=require('../BUSINESS/myfile')
 const deletefile=require('../BUSINESS/deletefile')
-
+const fetchusers=require('../BUSINESS/fetchusers')
 const tokenchecker=require('../BUSINESS/tokenchecker')
 
 
@@ -20,6 +20,7 @@ router.post('/fileupload', fileupload_M.array('kerafiles', 10),fileupload)
 router.get('/myfiles',myfiles)
 router.post('/deletefile',deletefile)
 router.get('/tokenchecker',tokenchecker)
+router.get('/fetchusers',fetchusers)
 
 router.get('/', (req, res) => {
   res.send('Hello');
