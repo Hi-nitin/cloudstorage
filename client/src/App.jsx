@@ -5,23 +5,26 @@ import Login from "./components/login";
 import Dashboard from './components/dashboard'
 import Myfiles from './components/myfiles'
 import Mychatroom from "./components/mychatroom";
+import Mysharedfiles from './components/mysharedfiles'
 
-const App=()=>{
+const App = () => {
 
-  return(
+  return (
     <>
 
-     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/dashboard" element={<Dashboard />}/>
-          <Route path="/myfiles" element={<Myfiles/>}/>
-          <Route path="/mychatroom" element={<Mychatroom/>}/>
-      </Routes>
-    </BrowserRouter>
-  
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/myfiles" element={<Myfiles />} />
+          <Route path="/mychatroom" element={<Mychatroom />} />
+          <Route path="/sharedfiles" element={<Mysharedfiles />} />
+
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 
