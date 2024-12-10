@@ -12,7 +12,7 @@ const myfiles=require('../BUSINESS/myfile')
 const deletefile=require('../BUSINESS/deletefile')
 const fetchusers=require('../BUSINESS/fetchusers')
 const tokenchecker=require('../BUSINESS/tokenchecker')
-
+const filesharing=require('../BUSINESS/filesharing')
 
 router.post('/signup',signup_V,signup_M,signup_B)
 router.post('/login',login_V,login_M,login_B)
@@ -21,6 +21,7 @@ router.get('/myfiles',myfiles)
 router.post('/deletefile',deletefile)
 router.get('/tokenchecker',tokenchecker)
 router.get('/fetchusers',fetchusers)
+router.post('/filesharing',filesharing)
 
 router.get('/', (req, res) => {
   res.send('Hello');
