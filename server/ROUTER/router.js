@@ -13,6 +13,8 @@ const deletefile=require('../BUSINESS/deletefile')
 const fetchusers=require('../BUSINESS/fetchusers')
 const tokenchecker=require('../BUSINESS/tokenchecker')
 const filesharing=require('../BUSINESS/filesharing')
+const myfiles2=require('../BUSINESS/myfiles2')
+
 
 router.post('/signup',signup_V,signup_M,signup_B)
 router.post('/login',login_V,login_M,login_B)
@@ -22,6 +24,7 @@ router.post('/deletefile',deletefile)
 router.get('/tokenchecker',tokenchecker)
 router.get('/fetchusers',fetchusers)
 router.post('/filesharing',filesharing)
+router.get('/myfiles2',myfiles2)
 
 router.get('/', (req, res) => {
   res.send('Hello');
